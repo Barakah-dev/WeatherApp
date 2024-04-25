@@ -44,7 +44,6 @@ public class WeatherForecastController : ControllerBase
 
     [HttpPost("get-location-data")]
     public async Task<IActionResult> Post([FromBody] FetchLocationDataDTO fetchLocationDataDTO)
-    // public async Task<IActionResult> CreateWeatherData([FromBody] FetchLocationDataDTO fetchLocationDataDTO)
     {
         var response = await _openWeatherService.GetLocationData(fetchLocationDataDTO);
 

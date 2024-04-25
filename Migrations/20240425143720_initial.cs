@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -15,8 +16,9 @@ namespace WeatherApp.Migrations
                 columns: table => new
                 {
                     id = table.Column<string>(type: "text", nullable: false),
-                    lon = table.Column<double>(type: "double precision", nullable: false),
                     lat = table.Column<double>(type: "double precision", nullable: false),
+                    lon = table.Column<double>(type: "double precision", nullable: false),
+                    createdAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     weather = table.Column<string>(type: "jsonb", nullable: false),
                     @base = table.Column<string>(name: "base", type: "text", nullable: false),
                     main = table.Column<string>(type: "jsonb", nullable: false),

@@ -6,16 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WeatherApp.Models
 {
-    // [PrimaryKey("ID")]
     public class LocationWeatherEntity
     {
-        // public string ID { get; set; }
-        // [Required]
-
         // [Column (TypeName = "jsonb" )]
         // public string coord { get; set; }
-        public double lon { get; set; }
         public double lat { get; set; }
+        public double lon { get; set; }
         public DateTime createdAt { get; set; }
 
         [Column (TypeName = "jsonb" )]

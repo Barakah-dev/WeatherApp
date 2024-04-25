@@ -22,7 +22,8 @@ public class LocationWeatherResponseRepository
     }
 
     public void UpdateWeatherData(LocationWeatherEntity entity)
-    {
+    {      
+      _dataContext.LocationWeatherData.Remove(entity);
       _dataContext.LocationWeatherData.Update(entity);
       _dataContext.SaveChanges();
     }
@@ -32,9 +33,9 @@ public class LocationWeatherResponseRepository
         var fieldExists = _dataContext.LocationWeatherData.FirstOrDefault(f => f.id == id ) ;
         return fieldExists;
     }
-    public LocationWeatherEntity GetWeatherByLonAndLat(double lon, double lat)
+    public LocationWeatherEntity GetWeatherByLonAndLat(double lat, double lon)
     {
-        var fieldExists = _dataContext.LocationWeatherData.FirstOrDefault(f => f.lon == lon && f.lat == lat) ;
+        var fieldExists = _dataContext.LocationWeatherData.FirstOrDefault(f => f.lat == lat && f.lon == lon) ;
         return fieldExists;
     }
     
